@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Fedinyak/frontend-project-lvl2#readme",
   "dependencies": {
+    "@jest/globals": "^27.4.6",
     "commander": "^8.3.0",
     "lodash": "^4.17.21"
   },
