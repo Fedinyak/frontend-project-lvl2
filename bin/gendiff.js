@@ -17,8 +17,6 @@ program
 // .argument('[options]', '<filepath1>', '<filepath2>');
 program.parse();
 
-
-
 // path.resolve('/foo/bar', './baz');
 // // Returns: '/foo/bar/baz'
 

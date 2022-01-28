@@ -41,6 +41,7 @@ const genDiff = (filepath1, filepath2) => {
     } else {
       diffKeys.push(`\n  + ${key}: ${file2[key]}`);
     }
+    return diffKeys;
   });
 
   const joinKeys = diffKeys.join();
