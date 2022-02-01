@@ -1,28 +1,10 @@
 import _ from 'lodash';
-import * as fs from 'fs';
-import * as path from 'path';
-import { cwd } from 'process';
-
-// const file1 = {
-//   "host": "hexlet.io",
-//   "timeout": 50,
-//   "proxy": "123.234.53.22",
-//   "follow": false
-// };
-
-// const file2 = {
-//   "timeout": 20,
-//   "verbose": true,
-//   "host": "hexlet.io"
-// };
+import parsers from './parsers.js';
 
 const genDiff = (filepath1, filepath2) => {
-  // readFile('/etc/passwd', 'utf8', callback);
-  const file1 = JSON.parse(fs.readFileSync(path.resolve(cwd(), filepath1), 'utf8'));
-  const file2 = JSON.parse(fs.readFileSync(path.resolve(cwd(), filepath2), 'utf8'));
+  const file1 = parsers(filepath1);
 
-  // const file1 = JSON.parse(fs.readFileSync(path.resolve(filepath1), 'utf8'));
-  // const file2 = JSON.parse(fs.readFileSync(path.resolve(filepath2), 'utf8'));
+  const file2 = parsers(filepath2);
 
   const keys1 = _.keys(file1);
   const keys2 = _.keys(file2);
@@ -46,12 +28,8 @@ const genDiff = (filepath1, filepath2) => {
 
   const joinKeys = diffKeys.join();
   const addBraces = `{${joinKeys}\n}`;
-  // console.log(addBraces);
 
   return addBraces;
 };
 
 export default genDiff;
-
-// const test1 = genDiff(file1, file2);
-// console.log(test1);
