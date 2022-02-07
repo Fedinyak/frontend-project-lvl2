@@ -4,3 +4,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/475cb9b9a453ad1f9f08/maintainability)](https://codeclimate.com/github/Fedinyak/frontend-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/475cb9b9a453ad1f9f08/test_coverage)](https://codeclimate.com/github/Fedinyak/frontend-project-lvl2/test_coverage)
 
+[![asciicast](https://asciinema.org/a/3jGxabW6IZTtHIQGpWkE6IeBs.svg)](https://asciinema.org/a/3jGxabW6IZTtHIQGpWkE6IeBs)

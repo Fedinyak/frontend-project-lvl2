@@ -27,6 +27,19 @@ const genDiff = (filepath1, filepath2) => {
   });
 
   const joinKeys = diffKeys.join();
+
+  // sortedKeys.map((key) => {
+  //   if (_.has(file1, key) && !_.has(file2, key)) {
+  //     return `\n  - ${key}: ${file1[key]}`;
+  //   } if (_.has(file1, key) && (file1[key] === file2[key])) {
+  //     return `\n    ${key}: ${file2[key]}`;
+  //   } if (_.has(file1, key) && (file1[key] !== file2[key])) {
+  //     return `\n  - ${key}: ${file1[key]}\n  + ${key}: ${file2[key]}`;
+  //   }
+  //   return `\n  + ${key}: ${file2[key]}`;
+  // });
+
+  // const joinKeys = sortedKeys.join();
   const addBraces = `{${joinKeys}\n}`;
 
   return addBraces;
