@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import parsers from './parsers.js';
-import stylish from './formatters/stylish.js';
+import formatter from './formatters/index.js';
 
 const getTree = (file1, file2) => {
   const keys1 = _.keys(file1);
@@ -28,12 +28,12 @@ const getTree = (file1, file2) => {
   return diff;
 };
 
-const genDiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const file1 = parsers(filepath1);
   const file2 = parsers(filepath2);
   const tree = getTree(file1, file2);
-  const diff = stylish(tree);
-  return diff;
+  const diffObject = formatter(tree, formatName);
+  return diffObject;
 };
 
 export default genDiff;
