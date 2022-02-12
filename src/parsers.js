@@ -6,14 +6,17 @@ import yaml from 'js-yaml';
 const parsers = (filePath) => {
   const file = fs.readFileSync(path.resolve(cwd(), filePath), 'utf8');
   const format = path.extname(filePath);
+  let result;
 
   if (format === '.json') {
-    return JSON.parse(file);
+    result = JSON.parse(file);
+    // return JSON.parse(file);
   } if (format === '.yml' || format === '.yaml') {
-    return yaml.load(file);
+    // return yaml.load(file);
+    result = yaml.load(file);
   }
-
-  return `Error, ${format} - wrong file extension`;
+  return result;
+  // return `Error, ${format} - wrong file extension`;
 };
 
 export default parsers;
