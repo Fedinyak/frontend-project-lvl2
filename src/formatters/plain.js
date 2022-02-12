@@ -4,7 +4,10 @@ const getParent = (parent, str = '') => {
   if (parent === '') {
     return str;
   }
-  return `${str}${parent}`;
+  let result = str;
+  result += parent;
+  return result;
+  // return `${str}${parent}`;
 };
 
 const stringifyValue = (value) => {
