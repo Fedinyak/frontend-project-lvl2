@@ -16,13 +16,3 @@ program
   });
 // .argument('[options]', '<filepath1>', '<filepath2>');
 program.parse();
-
-// path.resolve('/foo/bar', './baz');
-// // Returns: '/foo/bar/baz'
-
-// path.resolve('/foo/bar', '/tmp/file/');
-// // Returns: '/tmp/file'
-
-// path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
-// // If the current working directory is /home/myself/node,
-// // this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
