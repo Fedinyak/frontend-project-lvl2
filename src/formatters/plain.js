@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
-const getTab = (count, tab = '') => {
-  if (count === '') {
-    return tab;
+const getParent = (parent, str = '') => {
+  if (parent === '') {
+    return str;
   }
-  let result = tab;
-  result += count;
+  let result = str;
+  result += parent;
   return result;
 };
 
@@ -22,19 +22,19 @@ const stringifyValue = (value) => {
   return `${value}`;
 };
 
-const plain = (data, depth = '') => {
-  const tab = getTab(depth);
+const plain = (data, acc = '') => {
+  const parent = getParent(acc);
   const result = data.map(({
     key, status, value1, value2, children,
   }) => {
     if (status === 'nest') {
-      return `${plain(children, `${depth + key}.`)}`;
+      return `${plain(children, `${acc + key}.`)}`;
     } if (status === 'deleted') {
-      return `Property '${tab}${key}' was removed`;
+      return `Property '${parent}${key}' was removed`;
     } if (status === 'changed') {
-      return `Property '${tab}${key}' was updated. From ${stringifyValue(value1)} to ${stringifyValue(value2)}`;
+      return `Property '${parent}${key}' was updated. From ${stringifyValue(value1)} to ${stringifyValue(value2)}`;
     } if (status === 'added') {
-      return `Property '${tab}${key}' was added with value: ${stringifyValue(value1)}`;
+      return `Property '${parent}${key}' was added with value: ${stringifyValue(value1)}`;
     }
     return '';
   });
