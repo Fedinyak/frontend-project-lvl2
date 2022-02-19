@@ -24,7 +24,7 @@ const stylish = (data, depth = 1) => {
       return `${tab}  ${item.key}: ${stringifyValue(item.value1, depth + 1)}`;
     }
     if (item.status === 'changed') {
-      return `${tab}- ${item.key}: ${stringifyValue(item.value1, depth + 1)}\n${tab}+ ${item.key}: ${stringifyValue(item.value2, depth)}`;
+      return `${tab}- ${item.key}: ${stringifyValue(item.value1, depth + 1)}\n${tab}+ ${item.key}: ${stringifyValue(item.value2, depth + 1)}`;
     }
     return `${tab}+ ${item.key}: ${stringifyValue(item.value1, depth + 1)}`;
   });
