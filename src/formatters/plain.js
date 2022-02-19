@@ -22,21 +22,21 @@ const stringifyValue = (value) => {
 
 const plain = (data, acc = '') => {
   const parent = getParent(acc);
-  const result = data.map(({
-    key, status, value1, value2, children,
-  }) => {
-    if (status === 'nest') {
-      return `${plain(children, `${acc + key}.`)}`;
-    } if (status === 'deleted') {
-      return `Property '${parent}${key}' was removed`;
-    } if (status === 'changed') {
-      return `Property '${parent}${key}' was updated. From ${stringifyValue(value1)} to ${stringifyValue(value2)}`;
-    } if (status === 'added') {
-      return `Property '${parent}${key}' was added with value: ${stringifyValue(value1)}`;
+  const result = data.map((item) => {
+    if (item.status === 'nest') {
+      return `${plain(item.children, `${acc + item.key}.`)}`;
+    }
+    if (item.status === 'deleted') {
+      return `Property '${parent}${item.key}' was removed`;
+    }
+    if (item.status === 'changed') {
+      return `Property '${parent}${item.key}' was updated. From ${stringifyValue(item.value1)} to ${stringifyValue(item.value2)}`;
+    }
+    if (item.status === 'added') {
+      return `Property '${parent}${item.key}' was added with value: ${stringifyValue(item.value1)}`;
     }
     return '';
   });
   return `${result.filter((n) => n).join('\n')}`;
 };
-
 export default plain;

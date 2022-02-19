@@ -10,7 +10,7 @@ const formatter = (data, formatName) => {
   } if (formatName === 'json') {
     return json(data);
   }
-  return `Error, wrong --format ${formatName}`;
+  throw new Error(`Error, wrong --format ${formatName}`);
 };
 
 export default formatter;

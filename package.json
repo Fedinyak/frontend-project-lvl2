@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/Fedinyak/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Fedinyak/frontend-project-lvl2/actions)",
+  "description": "Compares two configuration files and shows a difference",
   "main": "src/genDiff.js",
   "type": "module",
   "bin": {
@@ -21,12 +21,12 @@
   },
   "homepage": "https://github.com/Fedinyak/frontend-project-lvl2#readme",
   "dependencies": {
-    "@jest/globals": "^27.4.6",
     "commander": "^8.3.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@jest/globals": "^27.4.6",
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
